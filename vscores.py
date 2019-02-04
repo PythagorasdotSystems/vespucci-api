@@ -57,7 +57,7 @@ def vespucci_coin_scores(config_file, coin):
 
     scores = []
 
-    cursor.execute('select top 30 Symbol, Score, FTA_score, TA_score, SA_score, createdAt from VespucciScores WITH (NOLOCK)  WHERE [Symbol]=?  ORDER BY myid  DESC',coin)
+    cursor.execute('select Symbol, Score, FTA_score, TA_score, SA_score, createdAt from VespucciScores WITH (NOLOCK)  WHERE [Symbol]=?  ORDER BY createdAt  DESC',coin)
     coin_history = cursor.fetchall()
     for coin_snapshot in coin_history:
         #scores.append({'id': coin,
