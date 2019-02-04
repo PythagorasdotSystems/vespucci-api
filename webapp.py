@@ -28,6 +28,12 @@ def get_coins_list():
     return jsonify(coins_list)
 
 
+@app.route('/api/beta/coins', methods=['GET'])
+def get_vespucci_coins():
+    coins_list = vscores.vespucci_coins(__config_file)
+    return jsonify(coins_list)
+
+
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)

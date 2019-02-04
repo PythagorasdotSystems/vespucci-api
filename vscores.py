@@ -86,3 +86,9 @@ def vespucci_scores_coins_list(config_file):
 
     return coins_list
 
+def vespucci_coins(config_file):
+    conf = utils.tools.ConfigFileParser(config_file)
+    coins_list = utils.tools.vespucci_coin_list(conf)
+
+    return coins_list
+
